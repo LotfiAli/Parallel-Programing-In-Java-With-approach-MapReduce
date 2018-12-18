@@ -1,4 +1,4 @@
-## # ### ## #  Parallel Programing In JavaEasy with With approach MapReduce
+## # ### ## #  Parallel Programing In JavaEasy with approach MapReduce
 
 
 Ali Lotfi edited this page an hour ago · 1 revision
