@@ -18,25 +18,14 @@ public class RestServiceCallMap implements MapJob<Object, Object> {
         `ExcelReadDto shebaNumber = (ExcelReadDto) input;`
 
         `context.Write(callRestService(shebaNumber.getSheba()));`
-
-    `}`
-
-`}`
-
-`private ShebaDto callRestService(String sheba) throws Exception {`
-    `try {`
-        `URL url = new URL("https://test.ir/sheba/rest/api/test/getIbanDetails?iban=" + sheba + "&token=IGD123654");`
-        `System.out.println(sheba);`
-        `HttpURLConnection conn = (HttpURLConnection) url.openConnection();`
-        `conn.setRequestMethod("GET");`
-        `conn.setRequestProperty("Accept", "application/json");`
-         .
-         .
-         .
-
-    `}`
-`}`
 }
+}
+ 
+
+ private ShebaDto callRestService(String sheba) throws Exception {
+  
+ }
+            
 
 ### ## # create reduce class
 
