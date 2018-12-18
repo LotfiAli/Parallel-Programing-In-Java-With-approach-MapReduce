@@ -4,7 +4,7 @@
 Ali Lotfi edited this page an hour ago · 1 revision
 Welcome to the ParallelProgramingInJavaEasy- wiki!
 
-Hello. I had a duty to do. I had to call a service with different data many times. It was here that each of these calls was separate from each other. Thus, by inspiration from the Hadoop and the MapReduce algorithm, each CPU core As a node, we have a map file that runs on any CPU core, and so each map will eventually be merged with a Reduce.
+Hello. I had a task to do. I had to call a service with different data many times. Each of these calls were independent. Thus, by inspiration from the Hadoop and the MapReduce algorithm, each CPU core As a node, we have a map file that runs on any CPU core, so each map will eventually be merged with a Reduce class.
 
 ## # ### ## # create map class
 
