@@ -7,6 +7,8 @@ Welcome to the ParallelProgramingInJavaEasy- wiki!
 Hello. I had a duty to do. I had to call a service with different data many times. It was here that each of these calls was separate from each other. Thus, by inspiration from the Hadoop and the MapReduce algorithm, each CPU core As a node, we have a map file that runs on any CPU core, and so each map will eventually be merged with a Reduce.
 
 ## # ### ## # create map class
+
+```
 public class RestServiceCallMap implements MapJob<Object, Object> {
 
 `public void map(Object input, Context context) throws Exception {`
@@ -20,17 +22,16 @@ public class RestServiceCallMap implements MapJob<Object, Object> {
         `context.Write(callRestService(shebaNumber.getSheba()));`
 }
 }
- 
-
  private ShebaDto callRestService(String sheba) throws Exception {
   
  }
+ ```
           
           
 
 ### ## # create reduce class
 
-
+```
 public class RestServiceCallReduce implements ReduceJob<Object, Object> {
 
 public void reduce(Object input, Context context) {
@@ -51,10 +52,12 @@ public void reduce(Object input, Context context) {
 
 
 } 
-
+```
 
 ### ## # You can specify the input of the map algorithm
 
+
+```
 public class ManageInputJobsFile {
 
 public static void addInputPath(final Jobs job, final String pathFile) {
@@ -75,9 +78,12 @@ public static void addInputPath(final Jobs job, final String pathFile) {
 }
 }
 
+```
+
 ### ## # You can specify the input of the reduce algorithm
 
 
+```
 public class ManageOutputJobsFile {
 public static void addOutputPath(Jobs job, final String pathFile) {
     job.setOutputExecuteJob(new OutPutExecuteJob() {
@@ -99,10 +105,11 @@ public static void addOutputPath(Jobs job, final String pathFile) {
     });
 
 
-}
-}
+```
 
 ## ### ****YOU must create a job class to execute your map/Reduce code
+
+```
 public class RunRestServiceJob implements RunAbleJob {
 
 private Jobs job;
@@ -136,3 +143,5 @@ public core.jobs.Jobs getJobs() {
 
 }
 }
+
+```
