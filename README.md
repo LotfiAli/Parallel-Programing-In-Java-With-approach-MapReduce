@@ -77,8 +77,8 @@ public static void addInputPath(final Jobs job, final String pathFile) {
 
 ### ## # You can specify the input of the reduce algorithm
 
-public class ManageOutputJobsFile {
 
+public class ManageOutputJobsFile {
 public static void addOutputPath(Jobs job, final String pathFile) {
     job.setOutputExecuteJob(new OutPutExecuteJob() {
         public void submit(Object items) throws Exception {
