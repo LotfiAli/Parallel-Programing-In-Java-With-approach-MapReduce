@@ -25,9 +25,11 @@ public class RestServiceCallMap implements MapJob<Object, Object> {
  private ShebaDto callRestService(String sheba) throws Exception {
   
  }
-            
+          
+          
 
 ### ## # create reduce class
+
 
 public class RestServiceCallReduce implements ReduceJob<Object, Object> {
 
@@ -47,10 +49,11 @@ public void reduce(Object input, Context context) {
 
 }
 
-public Context getContext() {
-    return null;
-}
-} ### ## # You can specify the input of the map algorithm
+
+} 
+
+
+### ## # You can specify the input of the map algorithm
 
 public class ManageInputJobsFile {
 
