@@ -29,6 +29,7 @@ public class ManageTasks {
     public int startTask() throws Exception {
         prepareTasks();
         return startTasks();
+
     }
 
     private Collection getAllTaskExcutor() throws Exception {
@@ -39,11 +40,18 @@ public class ManageTasks {
     }
 
     private int startTasks() throws Exception {
-        this.executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(PcManager.getCountCpu());
 
-        List<Future<Object>> result = executor.invokeAll(getAllTaskExcutor());
-        this.executor.shutdown();
-        this.executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+        ForkJoinPool forkJoinPool = new ForkJoinPool(4);
+        forkJoinPool.invokeAll(getAllTaskExcutor());
+        forkJoinPool.shutdown();
+        forkJoinPool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+
+//        this.executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(PcManager.getCountCpu());
+//
+//        List<Future<Object>> result = executor.invokeAll(getAllTaskExcutor());
+//        this.executor.shutdown();
+//        this.executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+
         List<Object> resultTask = joinResult();
         ReduceJob reduceJob = job.getReduceJob();
         ContextImpl contextReduce = new ContextImpl();
